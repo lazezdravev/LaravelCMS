@@ -111,7 +111,21 @@ public function __construct()
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
+
     {
+        $validator = Validator::make($request->all(), [
+            'name'     => 'required|max:255',
+            'email'    => 'required',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('dashboard/users/'. $id .'/edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+
         $user = User::FindOrFail($id);
 
         $user->fill($request->all())->save();
