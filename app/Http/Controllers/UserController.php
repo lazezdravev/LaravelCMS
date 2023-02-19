@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 
@@ -43,6 +44,18 @@ public function __construct()
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name'     => 'required|max:255',
+            'email'    => 'required',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('dashboard/users/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
 
 
         $name = $request->get('name');

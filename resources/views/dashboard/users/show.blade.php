@@ -8,7 +8,7 @@
 
 
         <p>You have added these products:</p>
-        
+
         <form method="post" action="{{ route('users.destroy', $user->id) }}">
             @method('DELETE')
             @csrf
