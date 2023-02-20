@@ -38,6 +38,16 @@
                         @enderror
                     </div>
 
+                    <div class="form-group mt-2">
+                        <label for="country">Country</label>
+                        <input type="country" class="form-control @error('country') is-invalid @enderror" id="country" value="{{ old('country') }}"name="country">
+                        @error('country')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+
                     <button type="submit" class="btn btn-primary mt-xl-4">Submit</button>
                 </form>
 
