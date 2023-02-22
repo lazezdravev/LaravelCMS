@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col-4">
-            <a href="{{ route('users.create') }}" class="btn btn-success ">+ Create User</a>
+            <a href="{{ route('users.create') }}" class="btn btn-success ">+Креирај корисник</a>
         </div>
     </div>
     <div class="col-12">
@@ -12,11 +12,11 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-
-                    <th>Created At</th>
-                    <th>Action</th>
+                    <th>Име</th>
+                    <th>Емаил</th>
+                    <th>Улога</th>
+                    <th>Креиран на</th>
+                    <th>Акција</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -25,8 +25,9 @@
                         <td><a href="{{ route('users.show', $user->id) }}">{{ $user->id }}</a></td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
+                        <td>{{ $user->role->name }}</td>
                         <td>{{ $user->created_at->diffForHumans() }}</td>
-                        <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Edit</a></td>
+                        <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Измени</a></td>
                     </tr>
                 @endforeach
                 </tbody>

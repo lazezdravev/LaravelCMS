@@ -8,7 +8,7 @@
                     @csrf
 
                     <div class="form-roup mt-2">
-                        <label for="name">Name</label>
+                        <label for="name">Име</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ old('name') }}" aria-describedby="YourName" name="name">
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="form-group mt-2">
-                        <label for="email">Email address</label>
+                        <label for="email">Eмаил адреса</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" aria-describedby="emailHelp" name="email">
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -27,9 +27,17 @@
                         @enderror
                     </div>
 
+                    <div class="form-group mt-2">
+                        <label for="role">Улоги</label>
+                        <select name="role_id" class="form-control" id="role">
+                            @foreach($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
                     <div class="form-group mt-2">
-                        <label for="password">Password</label>
+                        <label for="password">Лозинка</label>
                         <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" value="{{ old('password') }}"name="password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -38,17 +46,8 @@
                         @enderror
                     </div>
 
-                    <div class="form-group mt-2">
-                        <label for="country">Country</label>
-                        <input type="country" class="form-control @error('country') is-invalid @enderror" id="country" value="{{ old('country') }}"name="country">
-                        @error('country')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
 
-                    <button type="submit" class="btn btn-primary mt-xl-4">Submit</button>
+                    <button type="submit" class="btn btn-primary mt-xl-4">Потврди</button>
                 </form>
 
             </div>
