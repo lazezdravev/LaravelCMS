@@ -42,10 +42,6 @@
 </div>
 <!--////////////////// /.PreLoader END//////////////////////-->
 
-<!--App Start-->
-<div class="d-flex flex-column flex-root">
-    <!--Page-->
-    <div class="page d-flex flex-row flex-column-fluid">
 
         <!--///////////Page sidebar begin///////////////-->
         <aside class="page-sidebar">
@@ -58,11 +54,11 @@
                             <!--Sidebar-icon-->
                             <span class="sidebar-icon size-40 d-flex align-items-center justify-content-center fs-4 lh-1 text-white rounded-3 bg-gradient-primary fw-bolder"> A </span>
                             <span class="sidebar-text">
-                    <!--Sidebar-text-->
-                    <span class="sidebar-text text-truncate fs-3 fw-bold">
-                      Ларавел
-                    </span>
-                  </span>
+                            <!--Sidebar-text-->
+                            <span class="sidebar-text text-truncate fs-3 fw-bold">
+                              Larevel CMS
+                            </span>
+                          </span>
                         </div>
                     </a>
                 </div>
@@ -71,40 +67,109 @@
                     <nav class="flex-grow-1 h-100" id="page-navbar">
                         <!--:Sidebar nav-->
                         <ul class="nav flex-column collapse-group collapse d-flex">
-
+                            <li class="nav-item sidebar-title text-truncate opacity-50 small">
+                                <i class="bi bi-three-dots"></i>
+                                <span>Главни уредувања</span>
+                            </li>
                             <li class="nav-item">
                                 <a href="index.html" class="nav-link d-flex align-items-center text-truncate ">
                       <span class="sidebar-icon">
-                        <span class="material-symbols-rounded">
-                          sell
-                          </span>
+                          <i class="fs-2 text-primary d-block mb-2 bi bi-gear"></i>
                       </span>
                                     <!--Sidebar nav text-->
-                                    <div class="col-3">
-                                        <div class="flex-column" style="width: 330px;">
-                                            <ul class="nav nav-pills flex-column mb-auto">
-                                                <li class="nav-item">
-                                                    <a href="/admin/users" class="btn btn-primary">Корисници</a>
-                                                </li>
-
-                                                <li class="nav-item">
-                                                    <a href="/admin/products" class="btn btn-primary">Подесувања</a>
-                                                </li>
-
-                                            </ul>
+                                    <span class="sidebar-text">Подесувања</span>
+                                 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index-analytics.html" class="nav-link d-flex align-items-center text-truncate ">
+                      <span class="sidebar-icon">
+                       <i class="fs-2 text-primary d-block mb-2 bi bi-person-fill"></i>
+                      </span>
                                     <!--Sidebar nav text-->
-
-                                    <!--Sidebar nav text-->
-
-
+                                    <span class="sidebar-text">Корисници</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
 
 
                                     <!--Sidebar nav text-->
 
-                                    <!--Sidebar nav text-->
+                            <li class="nav-item mt-2 sidebar-title text-truncate small opacity-50">
+                                <i class="bi bi-three-dots"></i>
+                                <span>Уредување на веб страна</span>
+                            </li>
+                            <li class="nav-item">
+                                <a href="app-inbox.html"
+                                   class="nav-link d-flex align-items-center text-truncate ">
+                              <span class="sidebar-icon">
+                                <i class="fs-2 text-primary d-block mb-2 bi bi-sliders"></i>
+                              </span>
+                                    <span class="sidebar-text">Слајдер</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="app-chat.html"
+                                   class="nav-link d-flex align-items-center text-truncate ">
+                              <span class="sidebar-icon">
+                                <i class="fs-2 text-primary d-block mb-2 bi bi-card-checklist"></i>
+                              </span>
+                                    <span class="sidebar-text">Категории</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="app-calendar.html"
+                                   class="nav-link d-flex align-items-center text-truncate ">
+                              <span class="sidebar-icon">
+                                <i class="fs-2 text-primary d-block mb-2 bi bi-patch-plus-fill"></i>
+                              </span>
+                                    <span class="sidebar-text">Продукти</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="app-calendar.html"
+                                   class="nav-link d-flex align-items-center text-truncate ">
+                              <span class="sidebar-icon">
+                                <i class="fs-2 text-primary d-block mb-2 bi bi-patch-plus"></i>
+                              </span>
+                                    <span class="sidebar-text">Статички страни</span>
 
+                                </a>
+                            </li>
+                            <li class="nav-item mt-2 sidebar-title text-truncate small opacity-50">
+                                <i class="bi bi-three-dots"></i>
+                                <span>Општи уредувања</span>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="charts.html"
+                                   class="nav-link d-flex align-items-center text-truncate ">
+                              <span class="sidebar-icon">
+                                <i class="fs-2 text-primary d-block mb-2 bi bi-card-checklist"></i>
+                              </span>
+                                    <span class="sidebar-text">Услуги</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="maps.html"
+                                   class="nav-link d-flex align-items-center text-truncate ">
+                              <span class="sidebar-icon">
+                                <i class="fs-2 text-primary d-block mb-2 bi bi-people"></i>
+                              </span>
+                                    <span class="sidebar-text">Референти</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="datatables.html"
+                                   class="nav-link d-flex align-items-center text-truncate ">
+                              <span class="sidebar-icon">
+                                <i class="fs-2 text-primary d-block mb-2 bi bi-file-earmark-code"></i>
+                              </span>
+                                    <span class="sidebar-text">Скрипти</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                     <!--aside-info-box-->
-
                 </div>
             </div>
         </aside>
@@ -133,69 +198,11 @@
                 </a>
                 <ul class="navbar-nav d-flex align-items-center h-100">
                     <li class="nav-item d-none d-lg-flex flex-column h-100 me-2 align-items-center justify-content-center" data-tippy-placement="bottom-start" data-tippy-content="Toggle Sidebar">
-                        <a href="javascript:void(0)"
-                           class="sidebar-trigger nav-link size-40 d-flex align-items-center justify-content-center p-0">
-                  <span class="material-symbols-rounded">
-                    menu_open
-                    </span>
+                        <a href="javascript:void(0)" class="sidebar-trigger nav-link size-40 d-flex align-items-center justify-content-center p-0">
+                            <span class="material-symbols-rounded">
+                              menu_open
+                              </span>
                         </a>
-                    </li>
-                    <li class="nav-item d-flex flex-column me-2 h-100 justify-content-center dropdown" data-tippy-placement="bottom-start" data-tippy-content="Search in the App">
-                        <a href="javascript:void;" data-bs-target="#modal_search" data-bs-toggle="modal"
-                           class="d-flex align-items-center justify-content-center nav-link size-40 p-0">
-                  <span class="material-symbols-rounded">
-                    search
-                    </span>
-                        </a>
-                    </li>
-                    <li class="nav-item d-none d-md-flex flex-md-column me-2 h-100 justify-content-md-center dropdown">
-                        <a href="#" data-bs-toggle="dropdown"
-                           class="nav-link size-40 d-flex align-items-center justify-content-center p-0">
-                  <span class="material-symbols-rounded">
-                    apps
-                    </span>
-                        </a>
-                        <div class="dropdown-menu overflow-hidden dropdown-menu-sm p-0 mt-0">
-                            <!--Apps list-->
-                            <div class="list-group list-group-flush">
-
-                                <div class="list-group-item d-flex align-items-center justify-content-between px-3">
-                                    <h6 class="dropdown-header ps-0">Apps Shortcuts</h6>
-                                    <a href="#!" class="btn btn-primary">View All Apps <span class="ms-1 fs-5 align-middle material-symbols-rounded">
-                        arrow_forward
-                        </span></a>
-                                </div>
-                                <!--App item-->
-                                <a href="#!" class="list-group-item px-4 py-3 list-group-item-action d-flex align-items-center">
-                                    <!--App logo-->
-                                    <img src="/assets/media/brand-logos/atlassian.svg" class="width-30 w-auto flex-shrink-0 me-4" alt="">
-                                    <div class="flex-grow-1">
-                                        <h6 class="mb-0">Atlassian</h6>
-                                        <small>Security and control across Cloud</small>
-                                    </div>
-                                </a>
-
-                                <!--App item-->
-                                <a href="#!" class="list-group-item px-4 py-3 list-group-item-action d-flex align-items-center">
-                                    <!--App logo-->
-                                    <img src="/assets/media/brand-logos/google-webdev.svg" class="width-30 w-auto flex-shrink-0 me-4" alt="">
-                                    <div class="flex-grow-1">
-                                        <h6 class="mb-0">Google webdev</h6>
-                                        <small>Work involved in developing a website</small>
-                                    </div>
-                                </a>
-
-                                <!--App item-->
-                                <a href="#!" class="list-group-item px-4 py-3 list-group-item-action d-flex align-items-center">
-                                    <!--App logo-->
-                                    <img src="/assets/media/brand-logos/slack.svg" class="width-30 w-auto flex-shrink-0 me-4" alt="">
-                                    <div class="flex-grow-1">
-                                        <h6 class="mb-0">Slack</h6>
-                                        <small>Email collaboration software</small>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto d-flex align-items-center h-100">
@@ -205,13 +212,7 @@
                             <input type="checkbox" id="ChangeTheme"/> <span class="slide"></span>
                         </label>
                     </li>
-                    <li class="nav-item dropdown d-flex align-items-center justify-content-center flex-column h-100 me-2">
-                        <a href="#"
-                           class="nav-link p-0 position-relative size-40 d-flex align-items-center justify-content-center"
-                           aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside">
-                  <span class="material-symbols-rounded">
-                    notifications
-                    </span>
+
                             <span
                                 class="size-5 rounded-circle d-flex align-items-center justify-content-center position-absolute end-0 top-0 mt-2 me-1 bg-danger small"></span>
                         </a>
@@ -310,7 +311,7 @@
                                 <div class="avatar-status status-online me-sm-2 avatar xs">
                                     <img src="/assets/media/avatars/01.jpg" class="rounded-circle img-fluid" alt="">
                                 </div>
-                                <span class="d-none d-md-inline-block">Noah</span>
+                                <span class="d-none d-md-inline-block">Лазе Здравев</span>
                             </div>
                         </a>
 
@@ -331,7 +332,7 @@
                                         d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
                                 </svg>
                                 <div class="position-relative">
-                                    <h5 class="mb-1">Noah Pierre</h5>
+                                    <h5 class="mb-1">Лазе Здравев</h5>
                                     <p class="text-white text-opacity-75 small mb-0 lh-1">Full stack developer</p>
                                 </div>
                             </div>
@@ -340,26 +341,26 @@
                       <span class="material-symbols-rounded align-middle me-2 size-30 fs-5 d-flex align-items-center justify-content-center bg-primary text-white rounded-2">
                       account_circle
                       </span>
-                                    <span class="flex-grow-1">Profile</span>
+                                    <span class="flex-grow-1">Профил</span>
                                 </a>
                                 <a href="account-general.html" class="dropdown-item d-flex align-items-center">
                       <span class="material-symbols-rounded align-middle me-2 size-30 fs-5 d-flex align-items-center justify-content-center bg-danger text-white rounded-2">
                       settings
                       </span>
-                                    <span class="flex-grow-1">Settings</span>
+                                    <span class="flex-grow-1">Подесувања</span>
                                 </a>
                                 <a href="page-tasks.html" class="dropdown-item d-flex align-items-center">
                       <span class="material-symbols-rounded align-middle me-2 size-30 fs-5 d-flex align-items-center justify-content-center bg-info text-white rounded-2">
                       task
                       </span>
-                                    <span class="flex-grow-1">Tasks</span>
+                                    <span class="flex-grow-1">Задачи</span>
                                 </a>
                                 <hr class="my-2">
                                 <a href="page-auth-signin.html" class="dropdown-item d-flex align-items-center">
                       <span class="material-symbols-rounded align-middle me-2 size-30 fs-5 d-flex align-items-center justify-content-center bg-warning text-white rounded-2">
                       logout
                       </span>
-                                    <span class="flex-grow-1">Logout</span>
+                                    <span class="flex-grow-1">Одјави се</span>
                                 </a>
                             </div>
                         </div>
@@ -439,17 +440,15 @@
                 <div class="position-relative container-fluid px-0">
                     <div class="row align-items-center position-relative">
                         <div class="col-md-8 mb-4 mb-md-0">
-                            <h3 class="mb-2">Datatables</h3>
+
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb mb-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active">Datatables</li>
                                 </ol>
                             </nav>
                         </div>
                         <div class="col-md-4 text-md-end">
-                            <a href="https://datatables.net/" target="_blank" class="text-body">More Examples
+
                                 <span class="material-symbols-rounded align-middle ms-1 fs-5">
                         open_in_new
                         </span>

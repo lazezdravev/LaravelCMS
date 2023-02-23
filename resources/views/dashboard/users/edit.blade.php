@@ -8,7 +8,7 @@
             @method('put')
 
             <div class="form-group mt-2">
-                <label for="name">Name</label>
+                <label for="name">Име</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="YourName" name="name"
                        value="{{ $user->name }}">
                 @error('name')
@@ -19,7 +19,7 @@
             </div>
 
             <div class="form-group mt-2">
-                <label for="email">Email address</label>
+                <label for="email">Емаил адреса</label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp" name="email"
                        value="{{ $user->email }}">
                 @error('email')
@@ -29,7 +29,7 @@
                 @enderror
             </div>
             <div class="form-group mt-2">
-                <label for="password">Password</label>
+                <label for="password">Лозинка</label>
                 <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ $user->password }}">
                 @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -39,7 +39,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary mt-xl-4">Submit</button>
+            <button type="submit" class="btn btn-primary mt-xl-4">Потврди</button>
 
 
         </form>

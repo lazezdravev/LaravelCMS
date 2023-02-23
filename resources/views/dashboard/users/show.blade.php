@@ -2,17 +2,17 @@
 @extends('layouts.dashboard')
 @section('content')
     <div class="col-12">
-        <h1>Welcome {{ $user->name }}</h1>
-        <p>Your email address is: {{ $user->email }}</p>
-        <p>You have created your account {{ $user->created_at->diffForHumans() }}</p>
+        <h1>Добредојде {{ $user->name }}</h1>
+        <p>Вашата емеил адреса е: {{ $user->email }}</p>
+        <p> Креиравте профил пред {{ $user->created_at->diffForHumans() }}</p>
 
 
-        <p>You have added these products:</p>
+        <p>Ги додавте следниве продукти:</p>
 
         <form method="post" action="{{ route('users.destroy', $user->id) }}">
             @method('DELETE')
             @csrf
-            <button type="submit" class="btn btn-danger">Delete</button>
+            <button type="submit" class="btn btn-outline-danger">Избриши</button>
         </form>
 
     </div>
