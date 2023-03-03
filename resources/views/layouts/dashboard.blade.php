@@ -22,6 +22,8 @@
     <!--Choices css-->
     <link rel="stylesheet" href="/assets/vendor/css/choices.min.css">
 
+    <!-- Core Css Quill editor -->
+    <link href="assets/vendor/css/quill.snow.css" rel="stylesheet">
 
     <!--Main style-->
     <link rel="stylesheet" href="/assets/css/style.min.css">
@@ -81,7 +83,7 @@
                                  </a>
                             </li>
                             <li class="nav-item">
-                                <a href="index-analytics.html" class="nav-link d-flex align-items-center text-truncate ">
+                                <a href="{{ route('users.index') }}" class="nav-link d-flex align-items-center text-truncate ">
                       <span class="sidebar-icon">
                        <i class="fs-2 text-primary d-block mb-2 bi bi-person-fill"></i>
                       </span>
@@ -108,7 +110,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="app-chat.html"
+                                <a href="{{ route('categories.index') }}"
                                    class="nav-link d-flex align-items-center text-truncate ">
                               <span class="sidebar-icon">
                                 <i class="fs-2 text-primary d-block mb-2 bi bi-card-checklist"></i>
@@ -117,7 +119,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="app-calendar.html"
+                                <a href="{{route('product.index')}}"
                                    class="nav-link d-flex align-items-center text-truncate ">
                               <span class="sidebar-icon">
                                 <i class="fs-2 text-primary d-block mb-2 bi bi-patch-plus-fill"></i>
@@ -375,9 +377,6 @@
                 </ul>
             </header>
             <!--Main Header End-->
-
-
-
             <!--Main Search Modal-->
             <!-- Modal -->
             <div class="modal" id="modal_search" tabindex="-1" aria-labelledby="modal_searchLabel" aria-hidden="true">
@@ -449,9 +448,7 @@
                         </div>
                         <div class="col-md-4 text-md-end">
 
-                                <span class="material-symbols-rounded align-middle ms-1 fs-5">
-                        open_in_new
-                        </span>
+
                             </a>
                         </div>
                     </div>
@@ -469,7 +466,7 @@
                 <span class="d-block lh-sm small text-muted text-end">&copy;
                   <script>
                     document.write(new Date().getFullYear())
-                  </script>. Copyright
+                  </script>. Copyright PingDevs
                 </span>
                 </div>
             </footer>
@@ -484,7 +481,6 @@
 
 <!--////////////Theme Core scripts End/////////////////-->
 
-
 <!--Datatables-->
 <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap5.min.js"></script>
@@ -496,7 +492,8 @@
             "length":false
         });
     });
-</script>
+
+
 </body>
 
 </html>
