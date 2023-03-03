@@ -57,7 +57,7 @@
 
                         <div class="col-md-12">
                             <label for="description" class="form-label">Опис</label>
-                            <textarea name="desc" id="description" placeholder="Textarea"
+                            <textarea name="description" id="description" placeholder="Textarea"
                                       class="form-control quill-editor"></textarea>
                             @error('desc')
                             <span class="invalid-feedback" role="alert">
@@ -70,16 +70,16 @@
                         <div class="col-md-12">
                             <label for="category_id" class="form-label">Категорија</label>
                             <select id="category_id" class="form-select" name="category_id">
-                                <option value="">Главна Категорија</option>
-
+                                {!! $categories !!}
                             </select>
                         </div>
 
                         <div class="col-md-12">
                             <label for="user_id" class="form-label">Корисник</label>
                             <select id="user_id" class="form-select" name="user_id">
-                                <option value="">Перо</option>
-
+                                @foreach($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 

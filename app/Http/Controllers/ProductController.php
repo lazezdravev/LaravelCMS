@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
-use App\Http\Controllers\Helpers\ImageStore;
+use App\Http\Controllers\Helper\ImageStore;
 use App\Models\Gallery;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -27,12 +29,15 @@ class ProductController extends Controller
     public function create()
     {
         $users = User::all();
-        $data = ['users' => $users];
+        $categories = Categories::getList();
+        $data = ['users' => $users, 'categories' => $categories];
         return view('dashboard.products.create')->with($data);
     }
 
     public function store(Request $request)
     {
+
+
 
         $validator = Validator::make($request->all(), [
             'title'       => 'required|max:255',
@@ -48,15 +53,24 @@ class ProductController extends Controller
                 ->withInput();
         }
 
+
+        $imageObj = new ImageStore($request, 'products');
+        $image = $imageObj->imageStore();
+
+
+        $title = $request->get('title');
+        $slug = Str::slug($title);
+
         Product::create([
-            "title"         => $request->get('title'),
-            "image"         => $request->get('image'),
+            "title"         => $title,
+            "image"         => $image,
+            "slug"          => $slug,
             "category_id"   => $request->get('category_id'),
             "description"   => $request->get('description'),
             "user_id"       => $request->get('user_id')
         ]);
 
-        return redirect()->route('dashboard.products.index');
+        return redirect()->route('products.index');
     }
 
     public function show($id)
