@@ -16,9 +16,7 @@ class Settings extends Model
         'mainurl',
         'email',
         'description',
-        'logo',
-        'logomedium',
-        'logothumb',
+        'image',
         'link',
         'address',
         'phone',
@@ -30,20 +28,11 @@ class Settings extends Model
         'flickr',
         'pinterest',
         'user_id'
-
-
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-
-    public function gallery()
-    {
-        return $this->hasMany(Gallery::class, 'product_id', 'id');
-    }
-
-
 
 }

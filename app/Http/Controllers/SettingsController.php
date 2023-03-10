@@ -23,11 +23,16 @@ class SettingsController extends Controller
 
     public function index()
     {
+        $settings = Settings::first();
+        $users = User::all();
+        $data = ['settings' => $settings, 'users' => $users];
 
+        if (empty($settings)) {
+            return view('dashboard.settings.create')->with($data);
+        }
 
-        $settings = Settings::all();
-        $data = ['settings' => $settings];
         return view('dashboard.settings.index')->with($data);
+
     }
 
     public function create()
@@ -42,29 +47,28 @@ class SettingsController extends Controller
     {
 
 
-
         $validator = Validator::make($request->all(),
             [
-            'title'       => 'required|max:255',
-                'email'       => 'required',
-            'description' => 'required',
-            'image'       => 'required',
-            'link'        => 'required',
-            'adress'      => 'required',
-            'phone'       => 'required',
-            'twitter'     => 'required',
-            'facebook'    => 'required',
-            'skype'       => 'required',
-            'linkedin'    => 'required',
-            'youtube'     => 'required',
-            'flickr'      => 'required',
-            'pinterest'   => 'required',
-            'user_id'     => 'required'
-
-        ]);
+                'title' => 'required',
+                'mainurl' => 'required',
+                'email' => 'required',
+                'description' => 'required',
+                'image' => 'required',
+                'link' => 'required',
+                'address' => 'required',
+                'phone' => 'required',
+                'twitter' => 'required',
+                'facebook' => 'required',
+                'skype' => 'required',
+                'linkedin' => 'required',
+                'youtube' => 'required',
+                'flickr' => 'required',
+                'pinterest' => 'required',
+                'user_id' => 'required'
+            ]);
 
         if ($validator->fails()) {
-            return redirect('dashboard/settings/create')
+            return redirect()->to(route('settings.create'))
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -74,28 +78,28 @@ class SettingsController extends Controller
         $image = $imageObj->imageStore();
 
 
-        $title = $request->get('title');
-        $slug = Str::slug($title);
-
-        Product::create([
-            "title"         => $title,
-            "email"         => $email,
-            "slug"          => $slug,
-            "category_id"   => $request->get('category_id'),
-            "description"   => $request->get('description'),
-            "user_id"       => $request->get('user_id')
+        Settings::create([
+            "title" => $request->get('title'),
+            "mainurl" => $request->get('mainurl'),
+            "email" => $request->get('email'),
+            "description" => $request->get('description'),
+            "phone" => $request->get('phone'),
+            "address" => $request->get('address'),
+            "link" => $request->get('link'),
+            "image" => $image,
+            "facebook" => $request->get('facebook'),
+            "twitter" => $request->get('twitter'),
+            "linkedin" => $request->get('linkedin'),
+            "youtube" => $request->get('youtube'),
+            "pinterest" => $request->get('pinterest'),
+            "flickr" => $request->get('flickr'),
+            "skype" => $request->get('skype'),
+            "user_id" => $request->get('user_id')
         ]);
 
         return redirect()->route('settings.index');
     }
 
-    public function show($id)
-    {
-        $settings = Settings::FindOrFail($id);
-        $data = ['settings' => $settings];
-
-        return view('dashboard.settings.show')->with($data);
-    }
 
     public function edit($id)
     {
@@ -109,53 +113,48 @@ class SettingsController extends Controller
     public function update(Request $request, $id)
     {
 
-        $validator = Validator::make($request->all()    , [
-            "title"         => $request->get('title'),
-            "image"         => $request->get('image'),
-            "category_id"   => $request->get('category_id'),
-            "description"   => $request->get('description'),
-            "user_id"       => $request->get('user_id')
-        ]);
+        $settings = Settings::FindOrFail($id);
+
+        $validator = Validator::make($request->all(),
+            [
+                'title' => 'required',
+                'mainurl' => 'required',
+                'email' => 'required',
+                'description' => 'required',
+                'link' => 'required',
+                'address' => 'required',
+                'phone' => 'required',
+                'twitter' => 'required',
+                'facebook' => 'required',
+                'skype' => 'required',
+                'linkedin' => 'required',
+                'youtube' => 'required',
+                'flickr' => 'required',
+                'pinterest' => 'required',
+                'user_id' => 'required'
+            ]);
 
         if ($validator->fails()) {
-            return redirect('settings/'. $id . '/edit')
+            return redirect()->to(route('settings.update', $settings->id))
                 ->withErrors($validator)
                 ->withInput();
         }
 
 
-        $settings = Settings::FindOrFail($id);
-        $settings->fill($request->all())->save();
+        $imageObj = new ImageStore($request, 'settings');
+        $image = $imageObj->imageStore();
 
-        return redirect()->route('dashboard.settings.index');
+        $input = $request->all();
+
+        if ($image) {
+            $input['image'] = $image;
+        }
+
+
+        $settings->fill($input)->save();
+
+        return redirect()->route('settings.index');
     }
-
-    public function destroy($id)
-    {
-        $settings = Settings::FindOrFail($id);
-        $settings->delete();
-
-        return redirect()->route('dashboard.settings.index');
-    }
-
-    public function gallery($id)
-    {
-        $settings = Settings::where('id', '=',  $id)->first();
-        $data = ['settings' => $settings];
-
-        return view('dashboard.settings.gallery')->with($data);
-    }
-
-    public function storeImage(Request $request, $id)
-    {
-        $image = new ImageStore($request, 'gallery');
-        $image = $image->imageStore();
-        Gallery::create([
-            'image'          => $image
-        ]);
-        return redirect()->route('dashboard.settings.index');
-    }
-
 
 
 }

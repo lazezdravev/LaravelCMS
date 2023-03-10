@@ -54,6 +54,7 @@ Route::middleware(['web', 'auth'])->prefix('dashboard')->group(function () {
     Route::get('/settings/create', [App\Http\Controllers\SettingsController::class, 'create'])->name('settings.create');
     Route::get('/settings/{setting}/edit', [App\Http\Controllers\SettingsController::class, 'edit'])->name('settings.edit');
     Route::put('/settings/{setting}', [App\Http\Controllers\SettingsController::class, 'update'])->name('settings.update');
+    Route::post('/settings', [App\Http\Controllers\SettingsController::class, 'store'])->name('settings.store');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
